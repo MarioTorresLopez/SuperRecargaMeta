@@ -78,8 +78,8 @@ and open the template in the editor.
                                         </a>
                                     </div>
                                     <div class="form-group " style="text-align:right;">
-                                        <a href="http://superrecarga.website/SuperRecargaMeta/app/logout">
-                                        <!--<a href="http://localhost/SuperRecargaMeta/app/logout">-->
+                                        <!--<a href="http://superrecarga.website/SuperRecargaMeta/app/logout">-->
+                                        <a href="http://localhost/SuperRecargaMeta/app/logout">
                                             <button class="btn btn-danger" id="" name="" type="button">Salir</button>
                                         </a>
                                     </div>
