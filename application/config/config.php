@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/SuperRecarga/';
+$config['base_url'] = 'http://localhost/SuperRecargaMeta/';
 //$config['base_url'] = 'http://superrecarga.website/SuperRecargaMeta/';
 //$config['base_url'] = 'http://3.101.13.211/SuperRecargaMeta/';
 //$config['base_url'] = 'http://cidtai.uteq.edu.mx/simposio_nano/';
