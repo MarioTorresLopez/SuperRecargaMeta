@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+Options -MultiViews
+RewriteEngine on
+
+RewriteCond $1 !^(index.php|static|robots.txt|favicon.ico|subidas)
+RewriteRule ^(.*)$ /SuperRecargaMeta/index.php?$1 [L]
