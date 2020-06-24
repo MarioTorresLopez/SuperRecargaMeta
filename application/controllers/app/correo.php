@@ -44,16 +44,18 @@ class correo extends CI_Controller{
             //Server settings
             $mail->SMTPDebug = 0;                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
-            //$mail->Host = 'smtp.gmail.com';                       // Set the SMTP server to send through
-            $mail->Host = 'mail.diatel.com.mx';                       // Set the SMTP server to send through
+            $mail->Host = 'smtp.gmail.com';                       // Set the SMTP server to send through
+            //$mail->Host = 'mail.diatel.com.mx';                       // Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-            $mail->Username = 'noreply@diatel.com.mx';                     // SMTP username
-            //$mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
-            $mail->Password = 'Armidas2020*';                               // SMTP password
+            //$mail->Username = 'noreply@diatel.com.mx';                     // SMTP username
+            $mail->Username = 'apacan99@gmail.com';                     // SMTP username
+            $mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
+            //$mail->Password = 'gdqhijrouwijwbak';                               // SMTP password
+            //$mail->Password = 'Armidas2020*';                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
-            $mail->setFrom('noreply@diatel.com.mx', 'Super Recarga');
+            $mail->setFrom('apacan99@gmail.com', 'Super Recarga');
             //$mail->addAddress('luisdrodiguezg@hotmail.com');     // Add a recipient
             $mail->addAddress('2016313107@uteq.edu.mx');     // Add a recipient
 //            $mail->addAddress('ellen@example.com');               // Name is optional
@@ -313,7 +315,8 @@ corresponda para efectos de extender el servicio.
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
             $mail->Username = 'noresponder@diatel.com.mx';                     // SMTP username
             //$mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
-            $mail->Password = ',#*}!q@EJ!V~';                               // SMTP password
+            //$mail->Password = ',#*}!q@EJ!V~';                               // SMTP password
+            $mail->Password = 'W3eOg}[m25tC*';                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients

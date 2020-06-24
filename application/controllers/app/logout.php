@@ -235,7 +235,7 @@ corresponda para efectos de extender el servicio.
                 $mail->SMTPAuth = true;                                   // Enable SMTP authentication
                 $mail->Username = 'noresponder@diatel.com.mx';                     // SMTP username
                 //$mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
-                $mail->Password = ',#*}!q@EJ!V~';                               // SMTP password
+                $mail->Password = 'W3eOg}[m25tC*';                               // SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                 $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                 //Recipients
