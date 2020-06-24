@@ -317,7 +317,7 @@ corresponda para efectos de extender el servicio.
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
-            $mail->setFrom('noreply@diatel.com.mx', 'Super Recarga');
+            $mail->setFrom('noresponder@diatel.com.mx', 'Super Recarga');
             //$mail->addAddress('luisdrodiguezg@hotmail.com');     // Add a recipient
             $mail->addAddress('2016313107@uteq.edu.mx');     // Add a recipient
 //            $mail->addAddress('ellen@example.com');               // Name is optional
