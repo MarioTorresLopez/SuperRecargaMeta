@@ -78,7 +78,7 @@ and open the template in the editor.
                                     <div class="form-group">
                                         <div class="col-lg-12">
                                             <label style="color: blue;">Nombre corto*:</label>
-                                            <input type="text" value="" id="nombre" class="form-control letras" name="nombre"  placeholder="*Campo requerido">
+                                            <input type="text" value="" id="nombre" class="form-control" name="nombre"  placeholder="*Campo requerido">
                                             <span class="help-block"></span>
 
                                         </div>
