@@ -233,14 +233,15 @@ corresponda para efectos de extender el servicio.
                 //$mail->Host = 'smtp.gmail.com';                       // Set the SMTP server to send through
                 $mail->Host = 'mail.diatel.com.mx';                       // Set the SMTP server to send through
                 $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-                $mail->Username = 'noresponder@diatel.com.mx';                     // SMTP username
+                $mail->Username = 'noresponda@diatel.com.mx';                     // SMTP username
                 //$mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
-                $mail->Password = 'W3eOg}[m25tC*';                               // SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                $mail->Password = 'Armidas202020*';                               // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                $mail->Port = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                 //Recipients
-                $mail->setFrom('noresponder@diatel.com.mx', 'Super Recarga');
+                $mail->setFrom('noresponda@diatel.com.mx', 'Super Recarga');
                 $mail->addAddress($correo);
+                $mail->addAddress('noresponda@diatel.com.mx');
                 //Cambiar a correo de rh de la empresa
                 //$mail->addAddress('rulp@diatel.com.mx');
 //            $mail->addAddress('ellen@example.com');               // Name is optional

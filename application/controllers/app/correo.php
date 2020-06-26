@@ -11,7 +11,6 @@
  *
  * @author marioeduardo
  */
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dompdf\Dompdf;
@@ -52,8 +51,9 @@ class correo extends CI_Controller{
             $mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
             //$mail->Password = 'gdqhijrouwijwbak';                               // SMTP password
             //$mail->Password = 'Armidas2020*';                               // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
             $mail->setFrom('apacan99@gmail.com', 'Super Recarga');
             //$mail->addAddress('luisdrodiguezg@hotmail.com');     // Add a recipient
@@ -163,7 +163,6 @@ corresponda para efectos de extender el servicio.
     }
     
     public function enviar_pdf() {
-        
 //        $contenido="<html>";
 //        $contenido.="<head>";
 //        $contenido.="<style>";
@@ -313,14 +312,18 @@ corresponda para efectos de extender el servicio.
             //$mail->Host = 'smtp.gmail.com';                       // Set the SMTP server to send through
             $mail->Host = 'mail.diatel.com.mx';                       // Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-            $mail->Username = 'noresponder@diatel.com.mx';                     // SMTP username
+            $mail->Username = 'noresponda@diatel.com.mx';                     // SMTP username
             //$mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
             //$mail->Password = ',#*}!q@EJ!V~';                               // SMTP password
-            $mail->Password = 'W3eOg}[m25tC*';                               // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            //$mail->Password = 'W3eOg}[m25tC*';                               // SMTP password
+            //$mail->Password = 'Nfd1a~8Jnft3**';                               // SMTP password
+            $mail->Password = 'Armidas202020*';                               // SMTP password
+            //$mail->Password = $password;                               // SMTP password
+            //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
-            $mail->setFrom('noresponder@diatel.com.mx', 'Super Recarga');
+            $mail->setFrom('noresponda@diatel.com.mx', 'Super Recarga');
             //$mail->addAddress('luisdrodiguezg@hotmail.com');     // Add a recipient
             $mail->addAddress('2016313107@uteq.edu.mx');     // Add a recipient
 //            $mail->addAddress('ellen@example.com');               // Name is optional
