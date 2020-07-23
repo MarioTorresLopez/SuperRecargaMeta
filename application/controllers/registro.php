@@ -116,14 +116,14 @@ class registro extends CI_Controller{
                         $mail->SMTPAuth = true;                                   // Enable SMTP authentication
                         //$mail->Username = 'norespondersuperrecargas@gmail.com';                     // SMTP username
                         //$mail->Username = 'registros@diatel.com.mx';                     // SMTP username
-                        $mail->Username = 'registro@superrecarga.com.mx';
+                        $mail->Username = 'registros@superrecarga.com.mx';
                         //$mail->Password = 'zaznhekisdvtsgdb';                               // SMTP password
                         //$mail->Password = '/4Rz1ORv6xg?';                               // SMTP password
-                        $mail->Password = 'nlI?Vf{ROl{}>armidas*';
+                        $mail->Password = 'GuQd,I*eFG}7';
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                         $mail->Port = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                         //Recipients
-                        $mail->setFrom('registro@superrecarga.com.mx', 'Super Recarga');
+                        $mail->setFrom('registros@superrecarga.com.mx', 'Super Recarga');
                         $mail->addAddress($correo);
                         //$mail->addAddress('noresponda@diatel.com.mx');
                         //Cambiar a correo de rh de la empresa
@@ -216,11 +216,11 @@ class registro extends CI_Controller{
                     $mail->isSMTP();
                     $mail->Host = 'superrecarga.com.mx';
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'registro@superrecarga.com.mx';
-                    $mail->Password = 'nlI?Vf{ROl{}>armidas*';
+                    $mail->Username = 'registros@superrecarga.com.mx';
+                    $mail->Password = 'GuQd,I*eFG}7';
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                     $mail->Port = 465;
-                    $mail->setFrom('registro@superrecarga.com.mx', 'Super Recarga');
+                    $mail->setFrom('registros@superrecarga.com.mx', 'Super Recarga');
                     $mail->addAddress($correo);
                     $mail->isHTML(true);
                     $mail->Subject = 'SÚPERRECARGA Confirmación de Registro';
