@@ -73,13 +73,13 @@ and open the template in the editor.
                                     <label>Tienes <?= $telefonos->telefonos?> números celulares agregados</label>
                                     <br>
                                     <div class="form-group " style="text-align:right;">
-                                        <a href="<?=  base_url()?>usuario/registro_nuevo_usuario">
+                                        <a href="<?=  base_url()?>usuario/registro_beneficiario">
                                             <button class="btn btn-primary" id="correoEnviado" name="correoEnviado" type="button">Agregar celular</button>
                                         </a>
                                     </div>
                                     <div class="form-group " style="text-align:right;">
                                         <!--<a href="http://superrecarga.website/SuperRecargaMeta/app/logout">-->
-                                        <a href="http://localhost/SuperRecargaMeta/app/logout">
+                                        <a href="<?= base_url()?>app/logout">
                                             <button class="btn btn-danger" id="" name="" type="button">Salir</button>
                                         </a>
                                     </div>

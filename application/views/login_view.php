@@ -30,7 +30,7 @@ and open the template in the editor.
         <script src="<?= base_url()?>static/js/jquery-3.3.1.min.js"></script>
         <script src="<?= base_url()?>static/js/bootstrap.min.js"></script>
     </head>
-    <body class="blank">
+    <body class="blank" style="background-image: url('<?=  base_url()?>static/backgraund.jpg');">
 
         <!-- color-line START -->
         <div class="color-line"></div>
@@ -50,24 +50,27 @@ and open the template in the editor.
                     </div>-->
                     <div class="text-center m-b-md">
                         <img src="<?= base_url()?>static/Logotipo-Super-Recarga-R.png" alt="" class="img-responsive" style="display: block; margin: auto;" />
-                        <h3><?= $titulo ?></h3>
+                        <h3 style="color: white;"><?= $titulo ?></h3>
                         <!--<small></small>-->
                     </div>
                     <!-- text-center m-b-mb END -->
                     <!-- hpanel START -->
                     <div class="hpanel">
                         <!-- panel-body START -->
-                        <div class="panel-body">
+                        <div class="panel-body" style="background-color: #F2F2F2;">
                             <!-- form START -->
                             <form action="<?= base_url() ?>auth" method="post" id="loginForm">
                                 <div class="form-group">
-                                    <label class="control-label" for="username">Correo:</label>
-                                    <input type="text" placeholder="Correo" title="Por favor ingresa tu correo" required="" value="" name="username" id="username" class="form-control" autofocus>
+                                    <label><h5>*Campos obligatorios</h5></label>
+                                    <br>
+                                    <br>
+                                    <label class="control-label" for="username" style="color: blue;">Número celular (10 dígitos)*:</label>
+                                    <input type="text" placeholder="*Campo obligatorio" title="Por favor ingresa tu número celular" required="" value="" name="username" id="username" class="form-control" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="password">Contraseña:</label>
-                                    <input type="password" title="Por favor ingrese su contraseña" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                                    <span class="help-block small">Su contraseña (10 caracteres)</span>
+                                    <label class="control-label" for="password" style="color: blue;">Contraseña:</label>
+                                    <input type="password" title="Por favor ingresa tu contraseña" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                                    <span class="help-block small"></span>
                                     <?php
                                     if ($this->session->flashdata('usuario_incorrecto')) {
                                         ?>
@@ -85,9 +88,9 @@ and open the template in the editor.
                                 <button class="btn btn-primary btn-block" type="submit">
                                     <i class="fa fa-sign-in"></i> Iniciar sesión
                                 </button>
-<!--                                <a class="text-primary text-right btn-block loader-link" href="<?= base_url() ?>usuario/registro_nuevo_usuario" style="margin-top: 25px;">¿No tiene una cuenta? Por favor regístrese </a>
+                                <a class="text-primary text-right btn-block loader-link" href="<?= base_url() ?>registro" style="margin-top: 25px;">¿No tiene una cuenta? Por favor regístrese </a>
 
-                                <a class="text-primary text-right btn-block" style="margin-top: 5px;" href="usuario/recuperar_password">¿Olvidó su contraseña? Recuperela aquí</a>
+                                <!--<a class="text-primary text-right btn-block" style="margin-top: 5px;" href="usuario/recuperar_password">¿Olvidó su contraseña? Recuperela aquí</a>
 
                                 <small class="btn-block text-right" style="margin-top: 5px;">
                                     ¿Tiene problemas para acceder, por favor contacte al <a class="text-primary" href="#">Administrador</a>?

@@ -268,6 +268,11 @@ corresponda para efectos de extender el servicio.
                 $arreglo_sesiones_propietario = array(
                     'idprop' => FALSE,
                     'nombre' => FALSE,
+                    'ap' => FALSE,
+                    'am' => FALSE,
+                    'curprfc' => FALSE,
+                    'telefono' => FALSE,
+                    'empresa' => FALSE,
                     'correousu' => FALSE,
                     'monto' => FALSE,
                     'is_login' => FALSE
@@ -275,7 +280,7 @@ corresponda para efectos de extender el servicio.
                 $this->session->unset_userdata($arreglo_sesiones_propietario);
                 $this->session->sess_destroy();
                 //echo '<script languaje="javascript" type="text/javascript">window.close();</script>';
-                redirect(base_url() . "usuario/prueba", 'refresh');
+                redirect(base_url() . "login", 'refresh');
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
@@ -284,13 +289,18 @@ corresponda para efectos de extender el servicio.
             $arreglo_sesiones_propietario = array(
                 'idprop' => FALSE,
                 'nombre' => FALSE,
+                'ap' => FALSE,
+                'am' => FALSE,
+                'curprfc' => FALSE,
+                'telefono' => FALSE,
+                'empresa' => FALSE,
                 'correousu' => FALSE,
                 'monto' => FALSE,
                 'is_login' => FALSE
             );
             $this->session->unset_userdata($arreglo_sesiones_propietario);
             $this->session->sess_destroy();
-            redirect(base_url() . "usuario/prueba", 'refresh');
+            redirect(base_url() . "login", 'refresh');
         }
 
 //        $arreglo_sesiones_propietario = array(

@@ -13,14 +13,15 @@
  */
 class propietario_model extends CI_Model {
     
-    public function info_propietario($curprfc) {
-        $cmd="select * from propietario where curp like '$curprfc'";
+    public function info_propietario($telefono) {
+        $cmd="select * from propietario where telefono like '$telefono'";
         $query=$this->db->query($cmd);
         return ($query->num_rows() == 1) ? $query->row() : NULL;
     }
     
     public function insertar($arr) {
         $this->db->insert('propietario', $arr);
-        return TRUE;
+        return $this->db->insert_id();
+        //return TRUE;
     }
 }

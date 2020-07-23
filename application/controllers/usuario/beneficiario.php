@@ -49,7 +49,7 @@ class beneficiario extends CI_Controller {
         /*
          * parameto que se manda a la  vista para mostrar el titulo
          */
-        $data['titulo'] = "Simposio | Registro de cuenta nueva";
+        $data['titulo'] = "Súper Recarga | Beneficiarios";
         $data['nombre'] = $nombrepropietario;
         $data['idprop'] = $idpropietario;
         $data['telefonos'] = $this->beneficiario_model->beneficiarios_prop($idpropietario);

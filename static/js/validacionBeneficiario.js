@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
     $("#idoperador").change(function () {
         $("#idoperador option:selected").each(function () {
             paquete = $('#idoperador').val();
-            $.post("../usuario/registro_nuevo_usuario/buscar_paquete", {
+            $.post("../usuario/registro_beneficiario/buscar_paquete", {
                 idoperador: paquete
             }, function (data) {
                 $("#idpaquete").html(data);
@@ -46,7 +46,7 @@ jQuery(document).ready(function ($) {
     $("#idpaquete").change(function () {
         $("#idpaquete option:selected").each(function () {
             paquete = $('#idpaquete').val();
-            $.post("../usuario/registro_nuevo_usuario/buscar_paquete_info", {
+            $.post("../usuario/registro_beneficiario/buscar_paquete_info", {
                 idpaquete: paquete
             }, function (data) {
                 $("#idrespuesta").html(data);
@@ -55,105 +55,37 @@ jQuery(document).ready(function ($) {
     });
     
     $('#correoEnviado').click(function () {
-//        var tel1=document.getElementById("telefono1").value;
-//        tel1.value = (this.value + '').replace(/[^0-9]/g, '');
-//        $("#telefono1").val(tel1);
-//        var tel2=document.getElementById("telefono2").value;
-//        tel2.value = (this.value + '').replace(/[^0-9]/g, '');
-//        $("#telefono2").val(tel2);
-        if (validar('telefono1') == false || validar('telefono2')==false) {
+        
+        if (validar('telefono1') == false || validar('telefono2')==false || validar('nombre')==false || validar('idoperador')==false || validar('idpaquete')==false) {
+
+            swal({
+                title: "Alerta",
+                text: "Sus campos no estan validados.",
+                type: "warning"
+            });
+
             return false;
 
         } else {
-            swal({
-                title: "Registro",
-                text: "Se ha añadido un nuevo número teléfonico",
-                type: "success"
-            },
-            function () {
-                //location.href = "../login";
-                $("#form").submit();
-            });
+//Anterior
+//            swal({
+//                title: "Registro",
+//                text: "Se ha añadido un nuevo número teléfonico",
+//                type: "success"
+//            },
+//            function () {
+//                $('#form').submit();
+//            }
+//            );
+
+            addbeneficiario();
             return false;
         }
-
     });
     
-//    $("#telefono1").keyup(function () {
-//        var telefono1 = document.getElementById("telefono1").value;
-//        if (telefono1 === null || telefono1.length == 0 || /^\s+$/.test(telefono1) || telefono1 == "") {
-//            $("#iconotexto").remove();
-//            $("#telefono1").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono1").parent().children("span").text("Debe ingresar el telefono").show();
-//            $("#telefono1").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//        else if (isNaN(telefono1)) {
-//            $("#iconotexto").remove();
-//            $("#telefono1").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono1").parent().children("span").text("No se aceptan letras o caracteres especiales.").show();
-//            $("#telefono1").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//        else if (telefono1.length != 10) {
-//            $("#iconotexto").remove();
-//            $("#telefono1").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono1").parent().children("span").text("El telefono debe ser de 10 digitos").show();
-//            $("#telefono1").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//
-//
-//        else {
-//            $("#iconotexto").remove();
-//            $("#telefono1").parent().parent().attr("class", "form-group has-success has-feedback");
-//            $("#telefono1").parent().children("span").text("").hide();
-//            $("#telefono1").parent().append("<span id='iconotexto' class='glyphicon glyphicon-ok form-control-feedback' style='text-align-last: left;'></span>");
-//
-//            return true;
-//        }
-//    });
-//    
-//    $("#telefono2").keyup(function () {
-//        var telefono1 = document.getElementById("telefono1").value;
-//        var telefono2 = document.getElementById("telefono2").value;
-//        if (telefono2 === null || telefono2.length == 0 || /^\s+$/.test(telefono2) || telefono2 == "") {
-//            $("#iconotexto").remove();
-//            $("#telefono2").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono2").parent().children("span").text("Debe ingresar el telefono").show();
-//            $("#telefono2").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//        else if (isNaN(telefono2)) {
-//            $("#iconotexto").remove();
-//            $("#telefono2").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono2").parent().children("span").text("No se aceptan letras o caracteres especiales.").show();
-//            $("#telefono2").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//        else if (telefono2.length != 10) {
-//            $("#iconotexto").remove();
-//            $("#telefono2").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono2").parent().children("span").text("El telefono debe ser de 10 digitos").show();
-//            $("#telefono2").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//        else if (telefono1 !== telefono2) {
-//            $("#iconotexto").remove();
-//            $("#telefono2").parent().parent().attr("class", "form-group has-error has-feedback");
-//            $("#telefono2").parent().children("span").text("Los números telefonicos deben ser iguales").show();
-//            $("#telefono2").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
-//            return false;
-//        }
-//        else if (telefono1 == telefono2) {
-//            $("#iconotexto").remove();
-//            $("#telefono2").parent().parent().attr("class", "form-group has-success has-feedback");
-//            $("#telefono2").parent().children("span").text("").hide();
-//            $("#telefono2").parent().append("<span id='iconotexto' class='glyphicon glyphicon-ok form-control-feedback' style='text-align-last: left;'></span>");
-//
-//            return true;
-//        }
-//    });
+    $("#nombre").keyup(function () {
+        validar('nombre');
+    });
     
     $("#telefono1").keyup(function () {
         validar('telefono1');
@@ -170,10 +102,57 @@ jQuery(document).ready(function ($) {
             $("#telefono2").parent().removeClass('has-error');
             $("#telefono2").parent().removeClass('has-feedback');
         }
-
+    });
+    
+    $("#idoperador").change(function () {
+        validar('idoperador');
+    });
+    
+    $("#idpaquete").change(function () {
+        validar('idpaquete');
     });
     
     function validar(input){
+        
+        if (input === 'nombre') {
+            var nombre = document.getElementById("nombre").value;
+            if (nombre === null || nombre.length == 0 || /^\s+$/.test(nombre) || nombre == "") {
+                $("#iconotexto").remove();
+                $("#nombre").parent().parent().attr("class", "form-group has-error has-feedback");
+                $("#nombre").parent().children("span").text("Debe ingresar el nombre.").show();
+                $("#nombre").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                return false;
+            }
+            ///^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i
+            ///^\w+$/i
+            if (!/^[a-z\d\-_\s]+$/i.test(nombre)) {
+                $("#iconotexto").remove();
+                $("#nombre").parent().parent().attr("class", "form-group has-error has-feedback");
+                $("#nombre").parent().children("span").text("No se aceptan caracteres especiales.").show();
+                $("#nombre").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                return false;
+            }
+
+            else {
+                var espacever=nombre.charAt(nombre.length-1);
+                if(espacever==' '){
+                    $("#iconotexto").remove();
+                    $("#nombre").parent().parent().attr("class", "form-group has-error has-feedback");
+                    $("#nombre").parent().children("span").text("Existe un espacio al final.").show();
+                    $("#nombre").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                    return false;
+                }
+                else{
+                    $("#iconotexto").remove();
+                    $("#nombre").parent().parent().attr("class", "form-group has-success has-feedback");
+                    $("#nombre").parent().children("span").text("").hide();
+                    $("#nombre").parent().append("<span id='iconotexto' class='glyphicon glyphicon-ok form-control-feedback' style='text-align-last: left;'></span>");
+
+                    return true; 
+                }
+            }
+        }
+        
         if(input==="telefono1"){
             var telefono1 = document.getElementById("telefono1").value;
             if (telefono1 === null || telefono1.length == 0 || /^\s+$/.test(telefono1) || telefono1 == "") {
@@ -248,5 +227,68 @@ jQuery(document).ready(function ($) {
                 return true;
             }
         }
+        
+        if (input === 'idoperador') {
+            var tipo = document.getElementById("idoperador").value;
+            if (tipo === '---Seleccione---') {
+                $("#iconotexto").remove();
+                $("#idoperador").parent().parent().attr("class", "form-group has-error has-feedback");
+                $("#idoperador").parent().children("span").text("Debe seleccionar una opción.").show();
+                $("#idoperador").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                return false;
+            } else {
+                $("#iconotexto").remove();
+                $("#idoperador").parent().parent().attr("class", "form-group has-success has-feedback");
+                $("#idoperador").parent().children("span").text("").hide();
+                $("#idoperador").parent().append("<span id='iconotexto' class='glyphicon glyphicon-ok form-control-feedback' style='text-align-last: left;'></span>");
+                return true;
+            }
+        }
+        
+        if (input === 'idpaquete') {
+            var tipo = document.getElementById("idpaquete").value;
+            if (tipo === 'Selecciona') {
+                $("#iconotexto").remove();
+                $("#idpaquete").parent().parent().attr("class", "form-group has-error has-feedback");
+                $("#idpaquete").parent().children("span").text("Debe seleccionar una opción.").show();
+                $("#idpaquete").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                return false;
+            } else {
+                $("#iconotexto").remove();
+                $("#idpaquete").parent().parent().attr("class", "form-group has-success has-feedback");
+                $("#idpaquete").parent().children("span").text("").hide();
+                $("#idpaquete").parent().append("<span id='iconotexto' class='glyphicon glyphicon-ok form-control-feedback' style='text-align-last: left;'></span>");
+                return true;
+            }
+        }
+    }
+    
+    function addbeneficiario() {
+        $.ajax({
+            url: "http://localhost/SuperrecargaMeta/usuario/registro_beneficiario/insertar_beneficiario",
+            //url: "http://54.183.11.183/Superrecarga/usuario/registro_beneficiario/insertar_beneficiario",
+            type: "post",
+            dataType: "json",
+            data: $("#form").serialize(),
+            success: function (json) {
+                swal({
+                    title: "Registro",
+                    text: "Se ha añadido un nuevo número teléfonico",
+                    type: "success"
+                },
+                function () {
+                    location.href = "http://localhost/SuperrecargaMeta/usuario/beneficiario";
+                    //location.href = "http://54.183.11.183/Superrecarga/usuario/beneficiario";
+                });
+            },
+            error: function (a,b,c){
+                //alert("No Agregado " + c);
+                swal({
+                    title: "Alerta",
+                    text: "Es posible que el número que intenta ingresar ya este registrado, por favor verifique los datos",
+                    type: "warning"
+                });
+            }
+        });
     }
 });

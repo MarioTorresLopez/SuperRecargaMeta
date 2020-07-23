@@ -52,18 +52,13 @@ and open the template in the editor.
                 <!-- col-md-12 START -->
                 <div class="col-md-12" style="text-align: center">
                     <img src="<?= base_url()?>/static/cabeza.jpeg" width="350">
-                    <form role="form" id="form" action="<?= base_url() ?>usuario/prueba/prueba_post" method="post">
-                        <input type="hidden" value="" id="email" name="email">
-                        <input type="hidden" value="" id="empresa" name="empresa">
-                        <input type="hidden" value="" id="numeroempleado" name="numeroempleado">
-                        <input type="hidden" value="" id="nombre" name="nombre">
-                        <input type="hidden" value="" id="apellido1" name="apellido1">
-                        <input type="hidden" value="" id="apellido2" name="apellido2">
-                        <input type="hidden" value="" id="rfccurp" name="rfccurp">
-                        <button
-                        class="btn btn-success" id="correoEnviado" name="correoEnviado" style="background-color: #A2C62C" 
-                        type="submit">Selecciona tus números</button>
-                    </form>
+                    <br>
+                    <br>
+                    <a href="<?= base_url()?>login" class="btn btn-success" style="background-color: #A2C62C">Selecciona tus números</a>
+                    <br>
+<!--                    <button
+                        class="btn btn-success" style="background-color: #A2C62C" 
+                        type="button">Selecciona tus números</button>-->
                     <img src="<?= base_url()?>/static/pie.jpeg" width="350">
                     
                     <input type="hidden" value="" id="idpropietario" name="idpropietario">

@@ -24,23 +24,18 @@ and open the template in the editor.
     <!--     col-lg-6 START -->
     <div class="col-lg-12">
         <!--         hpanel START -->
-<!--        <div class="hpanel hblue">
-                         panel-heading START 
+        <div class="hpanel hblue">
             <div class="panel-heading" style="font-family: 'Soberana Sans'; font-size: 2rem;">
-                                 panel-tools START 
                 <div class="panel-tools">
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                 </div>
-                                 panel-tools END 
                 Agregar operador
             </div>
-                         panel-heading END 
-                         panel-body START 
             <div class="panel-body" style="font-family: 'Soberana Sans'; font-size: 1.5rem;">
                 <p>
-                                        Formulario 
+
                 </p>
-                                 form START 
+
                 <?php
                 if ($this->session->flashdata('nivel_incorrecta')) {
                     ?>
@@ -62,6 +57,21 @@ and open the template in the editor.
                                     <span class="help-block"></span>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <label style="color: blue;">Empresa a apoyar*:</label>
+                                            <select class="form-control js-source-states" style="width: 100%" name="especialidad" id="especialidad">
+                                                <option>---Seleccione---</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                            </select>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </div>
                             <div>
                                 <div class="col-sm-12">
                                     <button class="btn btn-sm btn-primary m-t-n-xs" id="botonNivel" name="botonNivel" type="submit">
@@ -72,11 +82,11 @@ and open the template in the editor.
                     </div>
                 </div>
                 </form>
-                                 form END 
+
             
         </div>
-                     panel-body END 
-    </div>-->
+
+    </div>
     <!--         hpanel END -->
 </div>
 
