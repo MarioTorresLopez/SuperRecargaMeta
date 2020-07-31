@@ -23,7 +23,8 @@ and open the template in the editor.
         <link rel="icon" href="<?= base_url() ?>static\images\logos\logo_aide_ico.ico" type="image/x-icon">
         <script src="<?= base_url()?>static/js/jquery-3.3.1.min.js"></script>
         <script src="<?= base_url()?>static/vendor/sweetalert/lib/sweet-alert.min.js"></script>
-        <script src="<?= base_url()?>static/js/validacionRegistro.js"></script>
+        <!--<script src="<?= base_url()?>Superrecarga/static/js/validacionRegistro.js"></script>-->
+        <script src="<?= base_url()?>static/js/validacionPassword.js"></script>
         <!-- Vendor styles -->
         <link rel="stylesheet" href="<?= base_url() ?>static/vendor/fontawesome/css/font-awesome.css" />
         <link rel="stylesheet" href="<?= base_url() ?>static/vendor/metisMenu/dist/metisMenu.css" />
@@ -73,77 +74,26 @@ and open the template in the editor.
                     <div class="hpanel">
                         <div class="panel-body" style="background-color: #F2F2F2;">
                             <!-- form start -->
-                            <form role="form" id="form" action="<?= base_url() ?>registro/registro_post" method="post">
+                            <form role="form" id="form" action="<?= base_url() ?>cambio/cambio_post" method="post">
                                 <!-- form row -->
                                 <div class="row">
-                                    <div class="form-group col-lg-12 ">
-                                        <label><h4>Registro</h4></label>
+                                    <div class="form-group col-lg-12" style="text-align: center;">
+                                        <label><h2>¡Bienvenido!</h2></label>
                                         <br>
-                                        <label><h4>*Campos obligatorios</h4></label>
+                                        <label><h4>Para poder continuar por favor actualiza tu contraseña</h4></label>
                                     </div>
                                     <div class="form-group ">
-                                        <div class="col-lg-4"> 
-                                            <label style="color: blue;">Nombre*:</label>
-                                            <input type="text" value="" id="nombre" class="form-control" name="nombre"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-4">
-                                            <label style="color: blue;">Apellido paterno*:</label>
-                                            <input type="text" value="" id="apellido1" class="form-control" name="apellido1"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-4">
-                                            <label style="color: blue;">Apellido materno*:</label>
-                                            <input type="text" value="" id="apellido2" class="form-control" name="apellido2"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <div class="col-lg-6"> 
-                                            <label style="color: blue;">Número celular (10 dígitos)*:</label>
-                                            <input type="tel" value="" id="telefono1" class="form-control solo-numero" name="telefono1"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-6">
-                                            <label style="color: blue;">Repetir número celular*:</label>
-                                            <input type="tel" value="" id="telefono2" class="form-control solo-numero" name="telefono2"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-6">
-                                            <label style="color: blue;">Empresa*:</label>
-                                            <input type="text" value="" id="empresa" class="form-control" name="empresa"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-6">
-                                            <label style="color: blue;">Número de empleado*:</label>
-                                            <input type="text" value="" id="numeroempleado" class="form-control" name="numeroempleado"  placeholder="*Campo requerido">
+                                        <div class="col-lg-12"> 
+                                            <label style="color: blue;">Ingresa tu nueva contraseña*:</label>
+                                            <input type="password" value="" id="password1" class="form-control solo-numero" name="password1"  placeholder="*Campo requerido">
                                             <span class="help-block"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-12">
-                                            <label style="color: blue;">Email*:</label>
-                                            <input type="text" value="" id="email" class="form-control" name="email"  placeholder="*Campo requerido">
+                                            <label style="color: blue;">Repite tu contraseña*:</label>
+                                            <input type="password" value="" id="password2" class="form-control solo-numero" name="password2"  placeholder="*Campo requerido">
                                             <span class="help-block"></span>
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-12">
-                                            <label style="color: blue;">RFC*:</label>
-                                            <input type="text" value="" id="rfccurp" class="form-control" name="rfccurp"  placeholder="*Campo requerido">
-                                            <span class="help-block"></span>
-
                                         </div>
                                     </div>
                                 <div class="col-lg-12">
@@ -154,10 +104,9 @@ and open the template in the editor.
 
                                 <div class="form-group " style="text-align:center;">
                                     <div class="col-lg-12">
-                                        <a class="btn btn-default" style="border-color: blue; color: blue;" href="<?= base_url()?>login" >Cancelar</a>
                                         <button
                                             class="btn btn-primary" id="correoEnviado" name="correoEnviado" 
-                                            type="button">Enviar</button>
+                                            type="submit">Guardar</button>
                                     </div>
                                 </div>
                             </form>
@@ -171,7 +120,7 @@ and open the template in the editor.
 
 <!--            <div class="row">
                 <div class="col-md-12 text-center">
-                    <strong><//?= app_title() ?></strong><br /><//?= app_name() ?> <br/> <?= date("Y") ?>. Todos los Derechos Reservados <br />
+                    <strong><?= app_title() ?></strong><br /><?= app_name() ?> <br/> <?= date("Y") ?>. Todos los Derechos Reservados <br />
                     <br /> <small>Desarrollado por <a href="http://cidtai.uteq.edu.mx">CIDTAI - UTEQ</a></small>
                 </div>
             </div>-->
@@ -216,26 +165,24 @@ and open the template in the editor.
         <script src="<?= base_url() ?>static/scripts/homer.js"></script>
         <script src="<?= base_url() ?>static/scripts/app/libs/common.js"></script>
         
+
+        <!-- App scripts -->
         <script type="text/javascript">
             function base_url() {
                 return "<?= base_url() ?>";
+                jQuery(document).ready(function ($) {
+                    loading();
+                });
             }
-            
-            jQuery(document).ready(function ($) {
-                loading();
+        </script>
+        <script>
+            $(function () {
                 $(".js-source-states").select2();
                 $(".js-source-states-2").select2();
             });
         </script>
-        
-        <script src="<?= base_url() ?>static/scripts/charts.js"></script>
-
-        <script>
-            $(function () {
-                //$(".js-source-states").select2();
-                //$(".js-source-states-2").select2();
-            });
-        </script>
+        <script src="<?= base_url() ?>static/scripts/homer.js"></script>
+        <script src="<?= base_url() ?>static/scripts/app/libs/common.js"></script>
 
         <!--validacion de contraseña -->
 

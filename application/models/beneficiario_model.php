@@ -91,4 +91,20 @@ from baja";
         $query=$this->db->query($cmd);
         return($query->num_rows()>0) ? $query->result() : NULL;
     }
+    
+    public function consultar_altalog($idoperador,$idpaquete) {
+        $cmd="select p.*,(select nombre from operador where idoperador='$idoperador') operador from paquete p where idoperador='$idoperador' and idpaquete='$idpaquete'";
+        $query=$this->db->query($cmd);
+        return ($query->num_rows == 1) ? $query->row() : NULL;
+    }
+    
+    public function insertar_altalog($arr) {
+        $this->db->insert('logaltas', $arr);
+        return TRUE;
+    }
+    
+    public function insertar_bajalog($arr) {
+        $this->db->insert('logbajas', $arr);
+        return TRUE;
+    }
 }

@@ -149,7 +149,8 @@ class beneficiario extends CI_Controller {
     }
     
     public function eliminar($id) {
-
+        $telpropietario=$this->session->userdata('telefono');
+        date_default_timezone_set('America/Mexico_City');
         /*
          * Traer el modelo para eliminar registro, con la respectiva función
          */
@@ -162,8 +163,20 @@ class beneficiario extends CI_Controller {
         $arr_baja['idpaquete'] = $datos_beneficiario->idpaquete;
         $arr_baja['idoperador'] = $datos_beneficiario->idoperador;
         $arr_baja['fecha'] = date('Y-m-d');
+        
+        $datos_paquete = $this->beneficiario_model->consultar_altalog($datos_beneficiario->idoperador, $datos_beneficiario->idpaquete);
+        $arr_bajalog = array();
+        $arr_bajalog['telpropietario'] = $telpropietario;
+        $arr_bajalog['telbeneficiario'] = $datos_beneficiario->telefono;
+        $arr_bajalog['nombrecorto'] = $datos_beneficiario->nombrecorto;
+        $arr_bajalog['operadornombre'] = $datos_paquete->operador;
+        $arr_bajalog['paquetenombre'] = $datos_paquete->nombre;
+        $arr_bajalog['descripcion'] = $datos_paquete->descripcion;
+        $arr_bajalog['precio'] = $datos_paquete->precio;
+        $arr_bajalog['vigencia'] = $datos_paquete->vigencia;
 
         $this->beneficiario_model->insertar_baja($arr_baja);
+        $this->beneficiario_model->insertar_bajalog($arr_bajalog);
         
         $this->beneficiario_model->eliminar_beneficiario($id);
 

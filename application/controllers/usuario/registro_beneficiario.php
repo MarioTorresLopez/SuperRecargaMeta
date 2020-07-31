@@ -87,6 +87,7 @@ class registro_beneficiario extends CI_Controller{
     }
     
     public function insertar_beneficiario() {
+        $telpropietario=$this->session->userdata('telefono');
         date_default_timezone_set('America/Mexico_City');
         
         if ($this->input->is_ajax_request()) {
@@ -103,7 +104,7 @@ class registro_beneficiario extends CI_Controller{
                 $arr_beneficiario['idpaquete'] = $this->input->post('idpaquete');
                 $arr_beneficiario['idoperador'] = $this->input->post('idoperador');
                 $arr_beneficiario['idpropietario'] = $this->input->post('idpropietario');
-                $arr_beneficiario['fecharegistro'] = date('Y-m-d');
+                $arr_beneficiario['fecharegistro'] = date('Y-m-d H:i:s');
                 $arr_beneficiario['estatus'] = 1;
 
                 $tel = $this->input->post('telefono1');
@@ -133,9 +134,21 @@ class registro_beneficiario extends CI_Controller{
                     $arr_alta['telefono'] = $datos_beneficiario->telefono;
                     $arr_alta['idpaquete'] = $datos_beneficiario->idpaquete;
                     $arr_alta['idoperador'] = $datos_beneficiario->idoperador;
-                    $arr_alta['fecha'] = date('Y-m-d');
+                    $arr_alta['fecha'] = date('Y-m-d H:i:s');
+                    
+                    $datos_paquete=$this->beneficiario_model->consultar_altalog($datos_beneficiario->idoperador,$datos_beneficiario->idpaquete);
+                    $arr_altalog = array();
+                    $arr_altalog['telpropietario'] = $telpropietario;
+                    $arr_altalog['telbeneficiario'] = $datos_beneficiario->telefono;
+                    $arr_altalog['nombrecorto'] = $datos_beneficiario->nombrecorto;
+                    $arr_altalog['operadornombre'] = $datos_paquete->operador;
+                    $arr_altalog['paquetenombre'] = $datos_paquete->nombre;
+                    $arr_altalog['descripcion'] = $datos_paquete->descripcion;
+                    $arr_altalog['precio'] = $datos_paquete->precio;
+                    $arr_altalog['vigencia'] = $datos_paquete->vigencia;
 
                     $this->beneficiario_model->insertar_alta($arr_alta);
+                    $this->beneficiario_model->insertar_altalog($arr_altalog);
                     echo json_encode(array("response_code" => 200, "evento_id" => $idbeneficiario));
                     //redirect(base_url() . 'usuario/beneficiario', 'refresh');
                 }

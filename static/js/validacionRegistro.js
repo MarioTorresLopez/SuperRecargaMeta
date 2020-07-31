@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
 //        var tel2=document.getElementById("telefono2").value;
 //        tel2.value = (this.value + '').replace(/[^0-9]/g, '');
 //        $("#telefono2").val(tel2);
-        if (validar('email')==false || validar('empresa')==false || validar('numeroempleado')==false || validar('apellido1')==false || validar('apellido2')==false || validar('telefono1') == false || validar('telefono2')==false) {
+        if (validar('email')==false || validar('empresa')==false || validar('numeroempleado')==false || validar('apellido1')==false || validar('apellido2')==false || validar('telefono1') == false || validar('telefono2')==false || validar('rfccurp')==false) {
 
             swal({
                 title: "Alerta",
@@ -83,6 +83,12 @@ jQuery(document).ready(function ($) {
             $("#telefono2").parent().removeClass('has-error');
             $("#telefono2").parent().removeClass('has-feedback');
         }
+    });
+    
+    $("#rfccurp").keyup(function () {
+        var valorinput = $('#rfccurp').val().toUpperCase();
+        $('#rfccurp').val(valorinput);
+        validar('rfccurp');
     });
     
     function validar(input){
@@ -367,14 +373,54 @@ jQuery(document).ready(function ($) {
                 return true;
             }
         }
+        
+        if (input === 'rfccurp') {
+            var rfccurp = document.getElementById("rfccurp").value;
+            if (rfccurp === null || rfccurp.length == 0 || /^\s+$/.test(rfccurp) || rfccurp == "") {
+                $("#iconotexto").remove();
+                $("#rfccurp").parent().parent().attr("class", "form-group has-error has-feedback");
+                $("#rfccurp").parent().children("span").text("Debe ingresar el RFC.").show();
+                $("#rfccurp").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                return false;
+            }
+            ///^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i
+            ///^\w+$/i
+            ///^[a-z\d\-_\s]+$/i
+            if (!/^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([A-Z]|[0-9]){2}([A]|[0-9]){1})?$/.test(rfccurp)) {
+                $("#iconotexto").remove();
+                $("#rfccurp").parent().parent().attr("class", "form-group has-error has-feedback");
+                $("#rfccurp").parent().children("span").text("Formato no valido.").show();
+                $("#rfccurp").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                return false;
+            }
+
+            else {
+                var espacever=rfccurp.charAt(rfccurp.length-1);
+                if(espacever==' '){
+                    $("#iconotexto").remove();
+                    $("#rfccurp").parent().parent().attr("class", "form-group has-error has-feedback");
+                    $("#rfccurp").parent().children("span").text("Existe un espacio al final.").show();
+                    $("#rfccurp").parent().append("<span id='iconotexto' class='glyphicon glyphicon-remove form-control-feedback' style='text-align-last: left;'></span>");
+                    return false;
+                }
+                else{
+                    $("#iconotexto").remove();
+                    $("#rfccurp").parent().parent().attr("class", "form-group has-success has-feedback");
+                    $("#rfccurp").parent().children("span").text("").hide();
+                    $("#rfccurp").parent().append("<span id='iconotexto' class='glyphicon glyphicon-ok form-control-feedback' style='text-align-last: left;'></span>");
+
+                    return true; 
+                }
+            }
+        }
     }
     
     function addcuenta() {
         var correo = document.getElementById("email").value;
         var telefono = document.getElementById("telefono1").value;
         $.ajax({
-            url: "http://localhost/SuperrecargaMeta/registro/registro_post",
-            //url: "http://54.183.11.183/Superrecarga/registro/registro_post",
+            //url: "http://localhost/SuperRecargaMeta/registro/registro_post",
+            url: "http://superrecarga.website/SuperRecargaMeta/registro/registro_post",
             type: "post",
             dataType: "json",
             data: $("#form").serialize(),
@@ -394,8 +440,8 @@ jQuery(document).ready(function ($) {
                         if(isConfirm){
                             //location.href = "../usuario/beneficiario/eliminar/"+elem.attr('data-id');
                             $.ajax({
-                                url: "http://localhost/SuperrecargaMeta/registro/reenviarcorreo",
-                                //url: "http://54.183.11.183/Superrecarga/registro/reenviarcorreo",
+                                //url: "http://localhost/SuperRecargaMeta/registro/reenviarcorreo",
+                                url: "http://superrecarga.website/SuperRecargaMeta/registro/reenviarcorreo",
                                 type: "post",
                                 dataType: "json",
                                 data: {
@@ -416,8 +462,8 @@ jQuery(document).ready(function ($) {
                             });
                         }
                         else{
-                            location.href = "http://localhost/SuperrecargaMeta/login";
-                            //location.href = "http://54.183.11.183/Superrecarga/login";
+                            //location.href = "http://localhost/SuperRecargaMeta/login";
+                            location.href = "http://superrecarga.website/SuperRecargaMeta/login";
                         }
                 });
             },

@@ -265,8 +265,8 @@ jQuery(document).ready(function ($) {
     
     function addbeneficiario() {
         $.ajax({
-            url: "http://localhost/SuperrecargaMeta/usuario/registro_beneficiario/insertar_beneficiario",
-            //url: "http://54.183.11.183/Superrecarga/usuario/registro_beneficiario/insertar_beneficiario",
+            //url: "http://localhost/SuperRecargaMeta/usuario/registro_beneficiario/insertar_beneficiario",
+            url: "http://superrecarga.website/SuperRecargaMeta/usuario/registro_beneficiario/insertar_beneficiario",
             type: "post",
             dataType: "json",
             data: $("#form").serialize(),
@@ -277,8 +277,8 @@ jQuery(document).ready(function ($) {
                     type: "success"
                 },
                 function () {
-                    location.href = "http://localhost/SuperrecargaMeta/usuario/beneficiario";
-                    //location.href = "http://54.183.11.183/Superrecarga/usuario/beneficiario";
+                    //location.href = "http://localhost/SuperRecargaMeta/usuario/beneficiario";
+                    location.href = "http://superrecarga.website/SuperRecargaMeta/usuario/beneficiario";
                 });
             },
             error: function (a,b,c){

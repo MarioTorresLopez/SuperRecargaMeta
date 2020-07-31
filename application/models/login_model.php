@@ -103,6 +103,13 @@ and beneficiario.idpropietario='$idpropietario' and beneficiario.estatus=1";
         $query=$this->db->query($cmd);
         return ($query->num_rows() > 0) ? $query->result() : NULL;
     }
+    
+    public function cambiar_password($id, $data) {
+        $this->db->where('idpropietario', $id);
+        $this->db->update('propietario', $data);
+
+        return TRUE;
+    }
 
 }
 
