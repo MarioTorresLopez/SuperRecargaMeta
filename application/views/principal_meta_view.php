@@ -51,7 +51,7 @@ and open the template in the editor.
             <div class="row" style="background-color: white;">
                 <!-- col-md-12 START -->
                 <div class="col-md-12" style="text-align: center">
-                    <img src="<?= base_url()?>/static/cabeza.jpeg" width="350">
+                    <img src="<?= base_url()?>/static/cabezaGFCapital.jpg" width="350">
                     <br>
                     <br>
                     <a href="<?= base_url()?>login" class="btn btn-success" style="background-color: #A2C62C">Selecciona tus números</a>
