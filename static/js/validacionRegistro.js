@@ -449,7 +449,7 @@ jQuery(document).ready(function ($) {
                                     telefono: telefono
                                 },
                                 success: function (json) {
-                                    alert("Reenviado");
+                                    alert("Se ha reenviado un correo a: "+correo+", por favor revise la bandeja de entrada o la de spam");
 //                                    swal({
 //                                        title: "Reenviado",
 //                                        text: "",

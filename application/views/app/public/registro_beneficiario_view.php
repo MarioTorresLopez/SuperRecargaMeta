@@ -106,14 +106,14 @@ and open the template in the editor.
                                     <div class="form-group ">
                                         <div class="col-lg-6"> 
                                             <label style="color: blue;">Número celular (10 dígitos)*:</label>
-                                            <input type="tel" value="" id="telefono1" class="form-control solo-numero" name="telefono1"  placeholder="*Campo requerido">
+                                            <input type="tel" value="" id="telefono1" class="form-control solo-numero" name="telefono1"  placeholder="*Campo requerido" maxlength="10">
                                             <span class="help-block"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-6">
                                             <label style="color: blue;">Repetir número celular*:</label>
-                                            <input type="tel" value="" id="telefono2" class="form-control solo-numero" name="telefono2"  placeholder="">
+                                            <input type="tel" value="" id="telefono2" class="form-control solo-numero" name="telefono2"  placeholder="*Campo requerido" maxlength="10">
                                             <span class="help-block"></span>
                                         </div>
                                     </div>

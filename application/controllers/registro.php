@@ -239,6 +239,10 @@ class registro extends CI_Controller{
                         <br>
                         <br>
                         <label style="font-family: sans-serif; font-size: 14px">
+                            El número celular registrado es: ' . $usuario . '
+                        </label>
+                        <br>
+                        <label style="font-family: sans-serif; font-size: 14px">
                             A partir de hoy vas a AHORRAR en todas tus recargas 
                         </label>
                         <br>
