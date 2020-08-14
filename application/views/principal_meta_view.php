@@ -43,7 +43,7 @@ and open the template in the editor.
     </head>
     <body class="blank">
         <!-- color-line START -->
-        <div class="color-line"></div>
+        <!--<div class="color-line"></div>-->
 
         <!-- login-container START -->
         <div class="register-container">
@@ -51,15 +51,16 @@ and open the template in the editor.
             <div class="row" style="background-color: white;">
                 <!-- col-md-12 START -->
                 <div class="col-md-12" style="text-align: center">
-                    <img src="<?= base_url()?>/static/cabezaGFCapital.jpg" width="350">
+                    Respaldo
+                    <img src="<?= base_url()?>static/cabezaGFCapital.jpeg" width="350">
                     <br>
                     <br>
-                    <a href="<?= base_url()?>login" class="btn btn-success" style="background-color: #A2C62C">Selecciona tus números</a>
+                    <a href="<?= base_url()?>login" class="btn btn-success" style="background-color: #A2C62C">Registro</a>
                     <br>
 <!--                    <button
                         class="btn btn-success" style="background-color: #A2C62C" 
                         type="button">Selecciona tus números</button>-->
-                    <img src="<?= base_url()?>/static/pie.jpeg" width="350">
+                    <img src="<?= base_url()?>static/pie.jpeg" width="350">
                     
                     <input type="hidden" value="" id="idpropietario" name="idpropietario">
                     <!-- text-center m-b-mb START -->

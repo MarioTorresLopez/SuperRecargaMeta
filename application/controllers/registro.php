@@ -115,15 +115,15 @@ class registro extends CI_Controller{
                         //$mail->Host = 'superrecarga.com.mx';
                         $mail->SMTPAuth = true;                                   // Enable SMTP authentication
                         //$mail->Username = 'norespondersuperrecargas@gmail.com';                     // SMTP username
-                        $mail->Username = 'registrosnoreplay@diatel.com.mx';                     // SMTP username
+                        $mail->Username = 'registrosnorespoda@diatel.com.mx';                     // SMTP username
                         //$mail->Username = 'registros@superrecarga.com.mx';
                         //$mail->Password = 'zaznhekisdvtsgdb';                               // SMTP password
                         //$mail->Password = '/4Rz1ORv6xg?';                               // SMTP password
-                        $mail->Password = '{&mHAX68,RSB';
+                        $mail->Password = 'y&?e@6(JEAQay&?e@6(JEAQa';
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                         $mail->Port = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                         //Recipients
-                        $mail->setFrom('registrosnoreplay@diatel.com.mx', 'Super Recarga');
+                        $mail->setFrom('registrosnorespoda@diatel.com.mx', 'Super Recarga');
                         $mail->addAddress($correo);
                         //$mail->addAddress('noresponda@diatel.com.mx');
                         //Cambiar a correo de rh de la empresa
@@ -218,13 +218,13 @@ class registro extends CI_Controller{
                 try {
                     $mail->SMTPDebug = 0;
                     $mail->isSMTP();
-                    $mail->Host = 'superrecarga.com.mx';
+                    $mail->Host = 'mail.diatel.com.mx';
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'registros@superrecarga.com.mx';
-                    $mail->Password = 'GuQd,I*eFG}7';
+                    $mail->Username = 'registrosnorespoda@diatel.com.mx';
+                    $mail->Password = 'y&?e@6(JEAQay&?e@6(JEAQa';
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                     $mail->Port = 465;
-                    $mail->setFrom('registros@superrecarga.com.mx', 'Super Recarga');
+                    $mail->setFrom('registrosnorespoda@diatel.com.mx', 'Super Recarga');
                     $mail->addAddress($correo);
                     $mail->isHTML(true);
                     $mail->Subject = 'SÚPERRECARGA Confirmación de Registro';
@@ -239,13 +239,13 @@ class registro extends CI_Controller{
                         <br>
                         <br>
                         <label style="font-family: sans-serif; font-size: 14px">
-                            El número celular registrado es: ' . $usuario . '
-                        </label>
-                        <br>
-                        <label style="font-family: sans-serif; font-size: 14px">
                             A partir de hoy vas a AHORRAR en todas tus recargas 
                         </label>
                         <br>
+                        <br>
+                        <label style="font-family: sans-serif; font-size: 14px">
+                            El número celular registrado es: ' . $usuario . '
+                        </label>
                         <br>
                         <label style="font-family: sans-serif; font-size: 14px">
                             Tu contraseña inicial es: ' . $password . '

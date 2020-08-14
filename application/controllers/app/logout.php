@@ -234,15 +234,15 @@ corresponda para efectos de extender el servicio.
                 //$mail->Host = 'superrecarga.com.mx';                       // Set the SMTP server to send through
                 $mail->Host = 'mail.diatel.com.mx';                       // Set the SMTP server to send through
                 $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-                $mail->Username = 'registrosnoreplay@diatel.com.mx';                     // SMTP username
+                $mail->Username = 'registrosnorespoda@diatel.com.mx';                     // SMTP username
                 //$mail->Password = 'akpzbktkhirkjrvs';                               // SMTP password
                 //$mail->Password = 'Armidas202020*';                               // SMTP password
                 //$mail->Password = 'GuQd,I*eFG}7';                               // SMTP password
-                $mail->Password = '{&mHAX68,RSB';                               // SMTP password
+                $mail->Password = 'y&?e@6(JEAQay&?e@6(JEAQa';                               // SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                 $mail->Port = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                 //Recipients
-                $mail->setFrom('registrosnoreplay@diatel.com.mx', 'Super Recarga');
+                $mail->setFrom('registrosnorespoda@diatel.com.mx', 'Super Recarga');
                 $mail->addAddress($correo);
                 //$mail->addAddress('noresponda@diatel.com.mx');
                 //Cambiar a correo de rh de la empresa
